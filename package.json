@@ -9,6 +9,13 @@
     "test": "gulp test --chrome",
     "docs": "typedoc --mode modules --out docs src"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mattmazzola/perceptron.git"
+  },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "perceptron",
     "ai",
