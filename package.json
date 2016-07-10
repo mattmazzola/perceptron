@@ -1,0 +1,40 @@
+{
+  "name": "perceptron",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -p .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "perceptron",
+    "ai",
+    "machine",
+    "learning",
+    "artificial",
+    "intelligence",
+    "neuron",
+    "network",
+    "single"
+  ],
+  "author": "Matt Mazzola",
+  "license": "MIT",
+  "devDependencies": {
+    "del": "^2.2.1",
+    "gulp": "^3.9.1",
+    "gulp-help": "^1.6.1",
+    "jasmine-core": "^2.4.1",
+    "karma": "^1.1.1",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-coverage": "^1.1.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.1",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-spec-reporter": "0.0.26",
+    "rollup": "^0.33.2",
+    "rollup-plugin-typescript": "^0.7.6",
+    "run-sequence": "^1.2.2",
+    "yargs": "^4.7.1"
+  }
+}
