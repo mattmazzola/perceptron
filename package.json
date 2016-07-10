@@ -1,11 +1,13 @@
 {
   "name": "perceptron",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Perceptron library written in TypeScript",
+  "main": "dist/perceptron.js",
+  "typings": "dist/perceptron.d.ts",
   "scripts": {
-    "build": "tsc -p .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublish": "gulp build",
+    "test": "gulp test --chrome",
+    "docs": "typedoc --mode modules --out docs src"
   },
   "keywords": [
     "perceptron",
@@ -23,7 +25,11 @@
   "devDependencies": {
     "del": "^2.2.1",
     "gulp": "^3.9.1",
+    "gulp-flatten": "^0.3.0",
+    "gulp-gh-pages": "^0.5.4",
     "gulp-help": "^1.6.1",
+    "gulp-typedoc": "^2.0.0",
+    "gulp-typescript": "^2.13.6",
     "jasmine-core": "^2.4.1",
     "karma": "^1.1.1",
     "karma-chrome-launcher": "^1.0.1",
@@ -35,6 +41,7 @@
     "rollup": "^0.33.2",
     "rollup-plugin-typescript": "^0.7.6",
     "run-sequence": "^1.2.2",
+    "typedoc": "^0.4.4",
     "yargs": "^4.7.1"
   }
 }

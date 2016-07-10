@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "moduleResolution": "node",
         "module": "umd",
         "target": "es5",
         "declaration": true,
@@ -7,6 +8,9 @@
         "sourceMap": true
     },
     "exclude": [
-        "node_modules"
+        "node_modules",
+        "typings/index.d.ts",
+        "dist",
+        "test"
     ]
 }
