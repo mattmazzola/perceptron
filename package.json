@@ -1,5 +1,5 @@
 {
-  "name": "perceptron",
+  "name": "@mattmazzola/perceptron",
   "version": "0.1.0",
   "description": "Perceptron library written in TypeScript",
   "main": "dist/perceptron.js",
