@@ -5,37 +5,56 @@ export interface ITrainingData {
   output: boolean;
 }
 
+export interface ILearningData extends ITrainingData {
+  weights: number[];
+  dotProduct: number;
+  threshold: number;
+  result: boolean;
+  weightsChanged: boolean;
+}
+
 export class Perceptron {
   threshold: number;
-  learningRate: number;
+  learningRate: number = 0.1;
   weights: number[];
-
-  constructor(threshold: number = 0.5, learningRate: number = 0.1) {
-    this.threshold = threshold;
-    this.learningRate = learningRate;
-  }
   
-  train(trainingSet: ITrainingData[], threshold: number = this.threshold, learningRate: number = this.learningRate) {
+  train(trainingSet: ITrainingData[], learningRate: number = this.learningRate): ILearningData[] {
     if (trainingSet.length === 0) {
       throw new Error(`trainingSet data must be non-empty array. You provided: ${trainingSet}`);
     }
 
     // Create new weights vector matching length of training data and set values to 0
-    const weights = Array.apply(null, new Array(trainingSet[0].vector.length)).map(() => 0);
+    const weights: number[] = Array.apply(null, new Array(trainingSet[0].vector.length + 1)).map(() => 0);
+    const learningSet: ILearningData[] = [];
+    const theta = 0;
+    const maxIterations = 2000;
+    let i: number;
 
-    while(true) {
+    for(i = 0; i < maxIterations; i++) {
       let errorCount = 0;
       trainingSet
         .forEach(({ vector, output }) => {
-          const dotProduct = util.dotProduct(vector, weights);
-          const result = dotProduct >= threshold;
+          const trainingVector = vector.concat([1]);
+          const dotProduct = util.dotProduct(trainingVector, weights);
+          const result = dotProduct >= theta;
           const error = (output ? 1 : 0) - (result ? 1 : 0);
-          console.log(`Vector: ${vector}, Weights: ${weights}, Output: ${dotProduct} - ${result}, Expected: ${threshold} - ${output}`);
+
+          const learningData: ILearningData = {
+            weights: weights.slice(0,2),
+            vector: vector.slice(0),
+            dotProduct,
+            result,
+            threshold: -weights[2],
+            output,
+            weightsChanged: false
+          };
+
+          learningSet.push(learningData);
 
           if (error !== 0) {
             errorCount += 1;
-            console.log('adjust weights');
-            vector
+            learningSet[learningSet.length-1].weightsChanged = true;
+            trainingVector
               .forEach((x, i) => {
                 weights[i] += learningRate * error * x;
               });
@@ -47,7 +66,14 @@ export class Perceptron {
       }
     }
 
-    this.weights = weights;
+    this.weights = weights.slice(0,2);
+    this.threshold = -weights[2];
+
+    if (i === maxIterations) {
+      throw new Error('Max Iterations reached. The training loop was terminated to prevent infinite loop');
+    }
+
+    return learningSet;
   }
 
   perceive(vector: number[], weights = this.weights, threshold = this.threshold): boolean {

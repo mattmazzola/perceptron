@@ -21,10 +21,16 @@ describe('perceptron', function () {
       }
     ];
     let and: perceptron.Perceptron;
+    let learningData: perceptron.ILearningData[];
 
     beforeAll(() => {
-      and = new perceptron.Perceptron(1.5);
-      and.train(trainingData);
+      and = new perceptron.Perceptron();
+      learningData = and.train(trainingData, 0.2);
+
+      learningData
+        .forEach(({vector, weights, dotProduct, result, threshold, output}) => {
+          console.log(`Vector: ${vector}, Weights: ${weights}, Output: ${dotProduct} - ${result}, Expected: ${threshold} - ${output}`);
+        });
     });
 
     it('should return false for [0,0]', function () {
@@ -66,8 +72,8 @@ describe('perceptron', function () {
     let and: perceptron.Perceptron;
 
     beforeAll(() => {
-      and = new perceptron.Perceptron(0.5);
-      and.train(trainingData);
+      and = new perceptron.Perceptron();
+      and.train(trainingData, 0.2);
     });
 
     it('should return false for [0,0]', function () {
