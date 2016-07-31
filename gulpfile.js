@@ -1,5 +1,6 @@
 var gulp = require('gulp-help')(require('gulp')),
   del = require('del'),
+  fs = require('fs'),
   karma = require('karma'),
   flatten = require('gulp-flatten'),
   ghPages = require('gulp-gh-pages'),
@@ -110,19 +111,34 @@ gulp.task('docs', 'Generate documentation', function () {
   return gulp.src(["src/*.ts"])
     .pipe(typedoc({
       mode: "modules",
+      includeDeclarations: true,
 
       // Output options (see typedoc docs) 
       out: "./docs",
 
       // TypeDoc options (see typedoc docs) 
-      name: "Perceptron"
+      name: "Perceptron",
+      ignoreCompilerErrors: true,
+      version: true
     }))
     .pipe(gulp.dest('./docs'));
 });
 
-gulp.task('ghpages', 'Update ghpages', function ()  {
-  return gulp.src(['docs/**/*'])
+gulp.task('ghpages', 'Update ghpages', ['nojekyll'], function ()  {
+  return gulp.src(['./docs/**/*'], {
+      dot: true
+  })
     .pipe(ghPages({
       force: true
     }));
+});
+
+gulp.task('nojekyll', 'Add .nojekyll file to docs directory', function (done) {
+    fs.writeFile('./docs/.nojekyll', '', function (error) {
+        if (error) {
+            throw error;
+        }
+
+        done();
+    });
 });
