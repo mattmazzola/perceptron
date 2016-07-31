@@ -42,10 +42,10 @@ export class Perceptron {
           const learningData: ILearningData = {
             weights: weights.slice(0,2),
             vector: vector.slice(0),
-            dotProduct,
-            result,
+            dotProduct: dotProduct,
+            result: result,
             threshold: -weights[2],
-            output,
+            output: output,
             weightsChanged: false
           };
 
