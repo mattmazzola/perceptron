@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;perceptron&quot; | Perceptron</title>
+	<title>ILearningData | Perceptron</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -57,34 +57,124 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_perceptron_.html">&quot;perceptron&quot;</a>
+					<a href="../modules/_perceptron_.html">&quot;perceptron&quot;</a>
+				</li>
+				<li>
+					<a href="_perceptron_.ilearningdata.html">ILearningData</a>
 				</li>
 			</ul>
-			<h1>External module &quot;perceptron&quot;</h1>
+			<h1>Interface ILearningData</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<a href="_perceptron_.itrainingdata.html" class="tsd-signature-type">ITrainingData</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">ILearningData</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Classes</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-class tsd-parent-kind-external-module"><a href="../classes/_perceptron_.perceptron.html" class="tsd-kind-icon">Perceptron</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Interfaces</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-interface tsd-parent-kind-external-module"><a href="../interfaces/_perceptron_.ilearningdata.html" class="tsd-kind-icon">ILearning<wbr>Data</a></li>
-								<li class="tsd-kind-interface tsd-parent-kind-external-module"><a href="../interfaces/_perceptron_.itrainingdata.html" class="tsd-kind-icon">ITraining<wbr>Data</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_perceptron_.ilearningdata.html#dotproduct" class="tsd-kind-icon">dot<wbr>Product</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="_perceptron_.ilearningdata.html#output" class="tsd-kind-icon">output</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_perceptron_.ilearningdata.html#result" class="tsd-kind-icon">result</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_perceptron_.ilearningdata.html#threshold" class="tsd-kind-icon">threshold</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="_perceptron_.ilearningdata.html#vector" class="tsd-kind-icon">vector</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_perceptron_.ilearningdata.html#weights" class="tsd-kind-icon">weights</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_perceptron_.ilearningdata.html#weightschanged" class="tsd-kind-icon">weights<wbr>Changed</a></li>
 							</ul>
 						</section>
 					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="dotproduct" class="tsd-anchor"></a>
+					<h3>dot<wbr>Product</h3>
+					<div class="tsd-signature tsd-kind-icon">dot<wbr>Product<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/mattmazzola/perceptron/blob/0582b3d/src/perceptron.ts#L10">perceptron.ts:10</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="output" class="tsd-anchor"></a>
+					<h3>output</h3>
+					<div class="tsd-signature tsd-kind-icon">output<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_perceptron_.itrainingdata.html">ITrainingData</a>.<a href="_perceptron_.itrainingdata.html#output">output</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/mattmazzola/perceptron/blob/0582b3d/src/perceptron.ts#L5">perceptron.ts:5</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="result" class="tsd-anchor"></a>
+					<h3>result</h3>
+					<div class="tsd-signature tsd-kind-icon">result<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/mattmazzola/perceptron/blob/0582b3d/src/perceptron.ts#L12">perceptron.ts:12</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="threshold" class="tsd-anchor"></a>
+					<h3>threshold</h3>
+					<div class="tsd-signature tsd-kind-icon">threshold<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/mattmazzola/perceptron/blob/0582b3d/src/perceptron.ts#L11">perceptron.ts:11</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="vector" class="tsd-anchor"></a>
+					<h3>vector</h3>
+					<div class="tsd-signature tsd-kind-icon">vector<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_perceptron_.itrainingdata.html">ITrainingData</a>.<a href="_perceptron_.itrainingdata.html#vector">vector</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/mattmazzola/perceptron/blob/0582b3d/src/perceptron.ts#L4">perceptron.ts:4</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="weights" class="tsd-anchor"></a>
+					<h3>weights</h3>
+					<div class="tsd-signature tsd-kind-icon">weights<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/mattmazzola/perceptron/blob/0582b3d/src/perceptron.ts#L9">perceptron.ts:9</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="weightschanged" class="tsd-anchor"></a>
+					<h3>weights<wbr>Changed</h3>
+					<div class="tsd-signature tsd-kind-icon">weights<wbr>Changed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/mattmazzola/perceptron/blob/0582b3d/src/perceptron.ts#L13">perceptron.ts:13</a></li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 		</div>
@@ -95,10 +185,10 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_perceptron_.html">"perceptron"</a>
+						<a href="../modules/_perceptron_.html">"perceptron"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_utilities_.html">"utilities"</a>
+						<a href="../modules/_utilities_.html">"utilities"</a>
 					</li>
 				</ul>
 			</nav>
@@ -107,11 +197,38 @@
 					<li class=" tsd-kind-class tsd-parent-kind-external-module">
 						<a href="../classes/_perceptron_.perceptron.html" class="tsd-kind-icon">Perceptron</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="../interfaces/_perceptron_.ilearningdata.html" class="tsd-kind-icon">ILearning<wbr>Data</a>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_perceptron_.ilearningdata.html" class="tsd-kind-icon">ILearning<wbr>Data</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_perceptron_.ilearningdata.html#dotproduct" class="tsd-kind-icon">dot<wbr>Product</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="_perceptron_.ilearningdata.html#output" class="tsd-kind-icon">output</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_perceptron_.ilearningdata.html#result" class="tsd-kind-icon">result</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_perceptron_.ilearningdata.html#threshold" class="tsd-kind-icon">threshold</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="_perceptron_.ilearningdata.html#vector" class="tsd-kind-icon">vector</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_perceptron_.ilearningdata.html#weights" class="tsd-kind-icon">weights</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_perceptron_.ilearningdata.html#weightschanged" class="tsd-kind-icon">weights<wbr>Changed</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="../interfaces/_perceptron_.itrainingdata.html" class="tsd-kind-icon">ITraining<wbr>Data</a>
+						<a href="_perceptron_.itrainingdata.html" class="tsd-kind-icon">ITraining<wbr>Data</a>
 					</li>
 				</ul>
 			</nav>
