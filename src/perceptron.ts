@@ -7,6 +7,7 @@ export interface ITrainingData {
 
 export interface ILearningData extends ITrainingData {
   weights: number[];
+  weightChanges: number[];
   dotProduct: number;
   threshold: number;
   result: boolean;
@@ -40,12 +41,13 @@ export class Perceptron {
           const error = (output ? 1 : 0) - (result ? 1 : 0);
 
           const learningData: ILearningData = {
-            weights: weights.slice(0,2),
+            weights: weights.slice(0),
             vector: vector.slice(0),
             dotProduct: dotProduct,
-            result: result,
+            result,
             threshold: -weights[2],
-            output: output,
+            output,
+            weightChanges: [],
             weightsChanged: false
           };
 
@@ -53,10 +55,12 @@ export class Perceptron {
 
           if (error !== 0) {
             errorCount += 1;
-            learningSet[learningSet.length-1].weightsChanged = true;
+            learningData.weightsChanged = true;
             trainingVector
               .forEach((x, i) => {
-                weights[i] += learningRate * error * x;
+                const change = learningRate * error * x;
+                weights[i] += change;
+                learningData.weightChanges[i] = change;
               });
           }
         });
